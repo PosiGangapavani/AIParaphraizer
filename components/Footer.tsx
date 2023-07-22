@@ -1,6 +1,8 @@
-import React from 'react'
+'use client'
 import {PiLinkDuotone} from "react-icons/pi"
 import {BsInstagram} from "react-icons/bs"
+
+
 
 function Footer() {
   return (
