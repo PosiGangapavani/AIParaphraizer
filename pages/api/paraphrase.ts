@@ -5,7 +5,7 @@ import { env } from "process";
 
 
 // Check if required environment variable is set
-if (env.NEXT_PUBLIC_ENV_VARIABLE_OPEN_AI_API_KEY) {
+if (!env.NEXT_PUBLIC_ENV_VARIABLE_OPEN_AI_API_KEY) {
   throw new Error("Missing env var from OpenAI");
 }
 
@@ -40,7 +40,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
     // Define payload object to send to OpenAI API
     const payload: promptPayload = {
-      model: "gpt-3.5-turbo",
+      model: "gpt-3.5-turbo-0301",
       messages: [{ role: "user", content: prompt }],
       temperature: 1,
       max_tokens: 500,
