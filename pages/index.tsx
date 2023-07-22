@@ -1,3 +1,4 @@
+
 import { useState, useRef } from "react";
 import { Toaster, toast } from "react-hot-toast";
 import { ClipLoader } from "react-spinners";
@@ -45,7 +46,8 @@ export default function Home() {
     const data = await response.json();
 
     // Set the paraphrased text to the first choice's message content in the response
-    setParaphrasedText(data.choices[0].message.content);
+    // setParaphrasedText(data.choices[0].message.content);
+    console.log(data)
 
     // Reset the loading state
     setLoading(false);
@@ -53,10 +55,11 @@ export default function Home() {
 
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-gray-100">
+    <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-gray-200">
+
       <main className="max-w-2xl w-full bg-white rounded-lg shadow-md p-6 mb-4">
-        <h1 className="text-4xl font-bold mb-4">AI Paraphrasing Tool</h1>
-        <p className="text-sm mb-8">
+        <h1 className="text-2xl font-semibold mb-4">AI Paraphrasing Tool</h1>
+        <p className="text-md mb-8">
           Enter the text you want to paraphrase below
         </p>
         <div className="mb-4">
@@ -92,7 +95,7 @@ export default function Home() {
         <div className="mb-4">
           <button
             onClick={handleParaphrase}
-            className="inline-block px-4 py-2 leading-none border rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:bg-blue-700"
+            className="inline-block px-4 py-2 text-md leading-none border rounded-lg text-white bg-gray-600 hover:bg-blue-500 focus:bg-blue-700"
           >
             Paraphrase
           </button>
@@ -142,11 +145,8 @@ export default function Home() {
           </div>
         )}
       </main>
-      <footer className="text-gray-600 text-center text-md mt-2">
-      
-           
- 
-      </footer>
+     
+     
     </div>
   );
 }
